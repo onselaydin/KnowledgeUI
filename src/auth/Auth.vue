@@ -47,6 +47,9 @@
                 .then(response => {
                     this.$router.push("/home")
                 })
+                .catch((e) => 
+                    alert("Kullanıcı adı yada şifre hatalı.")
+                );
             }
         }
     }

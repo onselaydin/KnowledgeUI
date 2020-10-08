@@ -10,6 +10,7 @@ import arttypedetail from '@/components/admin/arttypedetail'
 import Index from '@/components/Index.vue'
 import Auth from "@/auth/Auth.vue";
 import { store } from "@/store";
+import About from '@/components/About'
 
 Vue.use(VueRouter)
 
@@ -47,7 +48,7 @@ export const router =  new VueRouter({
     }
     },
     { path : "/auth", component : Auth },
-    
+    { path : "/about", component : About },
     {
       path: '/details/:aname',beforeEnter:(to,from,next)=>{
         next();
