@@ -5,15 +5,19 @@
    <transition name="fade" mode="out-in">
      <router-view></router-view>
    </transition>
+   <app-footer></app-footer>
  </div>
 </template>
 
 <script>
 import Header from "./AppHeader"
+import Footer from "./AppFooter"
+import AppFooter from './AppFooter.vue';
 export default {
   //name: "App",
   components:{
-        appHeader: Header
+        appHeader: Header,
+        appFooter:AppFooter
     }
 };
 </script>
