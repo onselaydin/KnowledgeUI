@@ -50,7 +50,7 @@
 import axios from "axios";
 import { VueEditor } from "vue2-editor";
 import { required, minLength, maxLength,  between } from "vuelidate/lib/validators";
- import Header from "./header"
+import Header from "./header"
 
 export default {
   components: {

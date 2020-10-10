@@ -10,13 +10,6 @@
           <input v-model="article.title" class="form-control" placeholder="title" />
         </div>
         <div class="form-group">
-          <!-- <textarea
-            v-model="article.content"
-            cols="40"
-            rows="10"
-            class="form-control"
-            placeholder="content">
-            </textarea> -->
             <vue-editor v-model="article.content"></vue-editor>
         </div>
         <div class="form-group">

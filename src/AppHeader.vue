@@ -2,7 +2,9 @@
      <b-navbar type="dark" variant="dark">
       <b-navbar-nav>
         <b-nav-item href="#" to="/">Ana Sayfa</b-nav-item>
+         <b-nav-item href="#" to="/last">Son Makale</b-nav-item>
         <b-nav-item href="#" to="/about">Hakkımda</b-nav-item>
+        <b-nav-item href="#" to="/contact">İletişim</b-nav-item>
         <!-- Navbar dropdowns -->
         <!-- <b-nav-item-dropdown text="Lang" right>
           <b-dropdown-item href="#">EN</b-dropdown-item>

@@ -11,6 +11,8 @@ import Index from '@/components/Index.vue'
 import Auth from "@/auth/Auth.vue";
 import { store } from "@/store";
 import About from '@/components/About'
+import Last from '@/components/Last'
+import Contact from '@/components/Contact'
 
 Vue.use(VueRouter)
 
@@ -49,6 +51,8 @@ export const router =  new VueRouter({
     },
     { path : "/auth", component : Auth },
     { path : "/about", component : About },
+    { path : "/last", component : Last },
+    { path : "/contact", component : Contact },
     {
       path: '/details/:aname',beforeEnter:(to,from,next)=>{
         next();
