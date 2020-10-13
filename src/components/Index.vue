@@ -40,7 +40,7 @@
               <md-card-actions md-alignment="space-between">
                 <!-- <div>
                   <md-button>Detay...</md-button>
-                </div> -->
+                </div> detay test deneme-->
 
                 <md-card-expand-trigger>
                   <md-button class="md-icon-button">
