@@ -38,9 +38,9 @@
 
             <md-card-expand>
               <md-card-actions md-alignment="space-between">
-                <div>
+                <!-- <div>
                   <md-button>Detay...</md-button>
-                </div>
+                </div> -->
 
                 <md-card-expand-trigger>
                   <md-button class="md-icon-button">
