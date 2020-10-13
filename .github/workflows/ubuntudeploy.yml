@@ -26,6 +26,6 @@ jobs:
           USERNAME: ${{ secrets.REMOTE_USER }}
           PORT: ${{ secrets.REMOTE_PORT }}
           PASSWORD: ${{ secrets.PASSWORD }}
-          SOURCE: "dist/"
+          SOURCE: "dist/."
           TARGET: "/var/www/okipu"
 
