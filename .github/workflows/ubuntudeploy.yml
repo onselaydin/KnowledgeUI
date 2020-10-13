@@ -20,7 +20,7 @@ jobs:
       - name: build
         run: npm install && npm run build
       - name: Deploy
-        uses: actions/checkout@v2 #onselaydin/KnowledgeUI@main
+        uses: actions/checkout@main #onselaydin/KnowledgeUI@main
         env:
           HOST: ${{ secrets.REMOTE_HOST }}
           USERNAME: ${{ secrets.REMOTE_USER }}
