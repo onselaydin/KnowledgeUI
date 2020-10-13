@@ -20,7 +20,7 @@ jobs:
       - name: build
         run: npm install && npm run build
       - name: Deploy
-        uses: actions/checkout@main #onselaydin/KnowledgeUI@main
+        uses: appleboy/scp-action@master
         env:
           HOST: ${{ secrets.REMOTE_HOST }}
           USERNAME: ${{ secrets.REMOTE_USER }}
