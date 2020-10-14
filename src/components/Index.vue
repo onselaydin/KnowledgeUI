@@ -35,12 +35,17 @@
                 <a :href="article.url">Ayrıca...</a>
               </div>
             </md-card-header>
-
-            <md-card-expand>
+            <md-card-actions md-alignment="space-between">
+                <div>
+                  <md-button @click="detail(article.id)">Detay</md-button>
+                </div>
+            </md-card-actions>
+            
+            <!-- <md-card-expand>
               <md-card-actions md-alignment="space-between">
-                <!-- <div>
+                <div>
                   <md-button>Detay...</md-button>
-                </div> detay test deploy-->
+                </div>
 
                 <md-card-expand-trigger>
                   <md-button class="md-icon-button">
@@ -54,7 +59,7 @@
                   <div v-html="article.content"></div>
                 </md-card-content>
               </md-card-expand-content>
-            </md-card-expand>
+            </md-card-expand> -->
           </md-card>
         </div>
       </div>
@@ -75,6 +80,10 @@ export default {
     };
   },
   methods: {
+    detail(Id){
+      this.$store.state.articleId = Id;
+      this.$router.push({name:'articledetail'});
+    },
     getData() {
       axios
         .get("articlecustom/getall")

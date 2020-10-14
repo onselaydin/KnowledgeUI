@@ -9,7 +9,8 @@ Vue.use(Vuex);
 //export default new Vuex.Store({
     state : {
         token : "",
-        fbApiKey : "AIzaSyAsKQgrRBYK5yNom081iYFRhTE71MQRyRs"
+        fbApiKey : "AIzaSyAsKQgrRBYK5yNom081iYFRhTE71MQRyRs",
+        articleId: ""
     },
 
     //senkron metodlar için mutation kullanılır.

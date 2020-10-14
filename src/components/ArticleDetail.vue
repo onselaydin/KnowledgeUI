@@ -21,13 +21,14 @@
             </div>
             
             <div class="form-group">
-                <label>{{article.arttypeDetail[0].title}}</label>
+               <label>{{article.arttypeDetail[0].title}}</label>
             </div>
             <div class="form-group">
                 <label>{{article.dates}}</label>
             </div>
     </div>
 </template>
+
 <script>
 import axios from "axios";
 export default {
@@ -50,13 +51,14 @@ export default {
   },
    methods: {
     getData() {
-      axios
-        .get("articlecustom/LastArticle")
-        .then((response) => {
-          this.article = response.data;
-          console.log(this.article);
-        })
-        .catch((e) => console.log(e));
+      let articleid = this.$store.state.articleId;
+          axios
+            .get("/article/"+articleid)       
+            .then((response) => {
+               this.article = response.data;
+               console.log(this.article);
+            })
+            .catch((e) => console.log(e));
     }
    }
 }

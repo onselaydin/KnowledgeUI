@@ -13,6 +13,7 @@ import { store } from "@/store";
 import About from '@/components/About'
 import Last from '@/components/Last'
 import Contact from '@/components/Contact'
+import ArticleDetail from '@/components/ArticleDetail'
 
 Vue.use(VueRouter)
 
@@ -53,6 +54,8 @@ export const router =  new VueRouter({
     { path : "/about", component : About },
     { path : "/last", component : Last },
     { path : "/contact", component : Contact },
+    { path : "/articledetail",name: 'articledetail', component : ArticleDetail },
+
     {
       path: '/details/:aname',beforeEnter:(to,from,next)=>{
         next();
