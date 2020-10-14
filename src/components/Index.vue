@@ -32,7 +32,7 @@
             <md-card-header>
               <div class="md-title">{{ article.title }}</div>
               <div class="md-subhead">
-                <a :href="article.url">Ayrıca bakınız...</a>
+                <a :href="article.url">Ayrıca...</a>
               </div>
             </md-card-header>
 
