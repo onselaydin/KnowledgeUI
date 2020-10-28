@@ -17,7 +17,7 @@
             placeholder="content"
           ></textarea>
         </div>
-       
+
       <button
         type="submit"
         class="btn btn-large btn-block btn-primary full-width">Kaydet</button>
@@ -34,13 +34,13 @@ export default {
   },
   methods: {
         onSubmit() {
-          this.articletype.dates = new Date().toLocaleString();
+          this.arttype.dates = new Date().toLocaleString();
           axios
-            .post("/arttype", { ...this.arttype })        
+            .post("/arttype", { ...this.arttype })
             .then((response) => {
               console.log(response);
               this.arttype = {};
-              
+
             })
             .catch((e) => console.log(e));
         },
