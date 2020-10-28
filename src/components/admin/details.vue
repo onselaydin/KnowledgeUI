@@ -17,12 +17,12 @@
         </div>
         <div class="form-group">
           <input v-model="article.image" type="text" class="form-control" placeholder="image" />
-        
+
         </div>
 
         <div class="row">
           <div class="col-md-6 mb-4">
-            <select class="browser-default custom-select" v-model="article.articleType">
+            <select class="browser-default custom-select" v-model="article.articleType" @change="selectedArttype">
               <option v-for="atype in articleTypes" :value="atype.id" :key="atype.id">{{atype.title}}</option>
             </select>
           </div>
@@ -61,11 +61,11 @@ export default {
         this.article = data;
       })
 		.catch((e) => console.log(e));
-		
-    
+
+
   },
   data() {
-    return {	
+    return {
       articlename : this.$route.params.aname,
       article: {
           title: "",
@@ -75,20 +75,34 @@ export default {
           image: "",
           dates:  ""
       },
+      arttype: {
+        Id:"",
+        title: "",
+        description: "",
+        dates: ""
+      },
       articleTypes: [],
+      arttypedetail:[]
     };
-	
+
   },
-  
+
   methods:{
 	 onSubmit() {
           this.article.dates = new Date().toLocaleString();
           axios
-            .put("/article", { ...this.article })        
+            .put("/article", { ...this.article })
             .then((response) => {
               //this.article = {};
             })
             .catch((e) => console.log(e));
+        },
+    selectedArttype(e){
+          console.log(e)
+           this.arttype.Id = this.article.articletype
+           this.arttype.title = e.target.selectedOptions[0].innerText;
+           this.arttypedetail.push(this.arttype);
+           this.article.arttypedetail = this.arttypedetail;
         }
   }
 };

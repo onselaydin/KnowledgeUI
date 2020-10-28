@@ -79,8 +79,9 @@ export default {
             .catch((e) => console.log(e));
         },
         selectedArttype(e){
+          //console.log(e)
            this.arttype.Id = this.article.articletype
-           this.arttype.title = e.target.value;
+           this.arttype.title = e.target.selectedOptions[0].innerText;
            this.arttypedetail.push(this.arttype);
            this.article.arttypedetail = this.arttypedetail;
         }
