@@ -19,7 +19,7 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import BootstrapVue from 'bootstrap-vue'
 
 
-axios.defaults.baseURL = "http://okipu.net/api";
+axios.defaults.baseURL = "http://139.59.215.230/api";
 //axios.defaults.baseURL = "http://localhost:5431/api";
 axios.defaults.headers.get["Accepts"] = "application/json";  //sadece json kabul
 
