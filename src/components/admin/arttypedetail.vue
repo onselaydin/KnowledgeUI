@@ -34,7 +34,7 @@ export default {
    components: {
     Header
   },
-	created() {
+	async created() {
     await axios
      .get("/arttype/"+this.articlename.toString())
       .then((response) => {

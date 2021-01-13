@@ -80,7 +80,7 @@ export default {
           callback: confirm => {
             if (confirm) {
              if(confirm){
-               await axios.delete("arttype/"+Id).then((result) => { this.getData(); }).catch((e) => console.log(e));
+               axios.delete("arttype/"+Id).then((result) => { this.getData(); }).catch((e) => console.log(e));
              }
             }
           }

@@ -63,7 +63,7 @@
       edit (Id) {
         this.$router.push({name:'details',params: { aname: Id }})
     },
-    async erase (Id) {
+    erase (Id) {
        this.$confirm(
         {
           message: 'Emin misin?',
@@ -71,10 +71,10 @@
             no: 'Hayır',
             yes: 'Evet'
           },
-          callback: confirm => {
+         callback: confirm => {
             if (confirm) {
              if(confirm){
-               await axios.delete("article/"+Id).then((result) => { this.getData(); }).catch((e) => console.log(e));
+                axios.delete("article/"+Id).then((result) => { this.getData(); }).catch((e) => console.log(e));
              }
             }
           }

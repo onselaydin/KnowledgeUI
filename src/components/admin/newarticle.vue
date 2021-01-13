@@ -56,7 +56,7 @@ export default {
   components: {
     VueEditor,Header
   },
-  created() {
+  async created() {
 
     await axios
       .get("/arttype")
