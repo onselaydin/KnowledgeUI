@@ -26,7 +26,7 @@
       </div>
 
       <div class="row">
-        <div class="col-md-9 mb-md-0 mb-5">
+
           <div v-for="article in articleList" :key="article.Id">
             <div class="card-expansion">
               <md-card>
@@ -52,7 +52,7 @@
               </md-card>
             </div>
           </div>
-        </div>
+
       </div>
     </section>
   </div>

@@ -20,7 +20,7 @@ import BootstrapVue from 'bootstrap-vue'
 
 
 axios.defaults.baseURL = "http://139.59.215.230/api";
-//axios.defaults.baseURL = "http://localhost:5431/api";
+//axios.defaults.baseURL = "http://localhost:5000/api";
 axios.defaults.headers.get["Accepts"] = "application/json";  //sadece json kabul
 
 Vue.use(ClientTable);
