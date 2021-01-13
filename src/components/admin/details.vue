@@ -47,14 +47,14 @@ export default {
   },
 	created() {
 
-    axios
+    await axios
       .get("/arttype")
       .then((response) => {
         let data = response.data;
         this.articleTypes = data;
       }).catch((e) => console.log(e));
 
-    axios
+    await axios
       .get("/article/"+this.articlename.toString())
       .then((response) => {
         let data = response.data;
@@ -88,9 +88,9 @@ export default {
   },
 
   methods:{
-	 onSubmit() {
+	 async onSubmit() {
           this.article.dates = new Date().toLocaleString();
-          axios
+          await axios
             .put("/article", { ...this.article })
             .then((response) => {
               //this.article = {};

@@ -4,17 +4,17 @@
 
     <!-- <div v-for="articletype in articleTypeList" :key="articletype.id">
       <a href="#" @click="goDetail(articletype.id)" class="list-group-item list-group-item-action flex-column align-items-start">
-            {{articletype.title}} 
+            {{articletype.title}}
     <router-view></router-view>
- 
-  </a> 
+
+  </a>
     </div>-->
 
     <v-client-table
       :data="articleTypeList"
       :columns="columns"
       :options="options">
-      <span slot="actions" slot-scope="{row}"> 
+      <span slot="actions" slot-scope="{row}">
           <button v-on:click="edit(row.id)">Seç</button>
           <button v-on:click="erase(row.id)">Sil</button>
       </span>
@@ -55,8 +55,8 @@ export default {
     // goDetail(article) {
     //   this.$router.push({ name: "arttypedetail", params: { aname: article } });
     // },
-    getData(){
-       axios
+    async getData(){
+      await axios
       .get("/arttype")
       .then((result) => {
         let data = result.data;
@@ -66,8 +66,8 @@ export default {
     },
     edit (Id) {
        this.$router.push({ name: "arttypedetail", params: { aname: Id } });
-    },   
-    erase (Id) {
+    },
+    async erase (Id) {
        console.log(Id);
 
        this.$confirm(
@@ -80,14 +80,14 @@ export default {
           callback: confirm => {
             if (confirm) {
              if(confirm){
-               axios.delete("arttype/"+Id).then((result) => { this.getData(); }).catch((e) => console.log(e));
+               await axios.delete("arttype/"+Id).then((result) => { this.getData(); }).catch((e) => console.log(e));
              }
             }
           }
         }
       )
 
-    }   
+    }
   },
 };
 </script>

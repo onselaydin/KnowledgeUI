@@ -35,7 +35,7 @@ export default {
     Header
   },
 	created() {
-    axios
+    await axios
      .get("/arttype/"+this.articlename.toString())
       .then((response) => {
         let data = response.data;
@@ -43,12 +43,12 @@ export default {
         console.log(this.articletype);
       })
 		.catch((e) => console.log(e));
-		
-	
+
+
   },
   data() {
     return {
-		
+
 	  articlename : this.$route.params.aname,
 	  articletype: {
         title: "",
@@ -58,10 +58,10 @@ export default {
 	};
   },
   methods:{
-	 onSubmit() {
+	 async onSubmit() {
        this.articletype.dates = new Date().toLocaleString();
-          axios
-            .put("/arttype", { ...this.articletype })        
+         await axios
+            .put("/arttype", { ...this.articletype })
             .then((response) => {
               //this.article = {};
             })

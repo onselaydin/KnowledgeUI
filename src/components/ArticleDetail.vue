@@ -1,25 +1,25 @@
 <template>
     <div class="container">
-       
+
             <p><br></p>
-            
+
             <img alt="Qries" v-bind:src="article.image" width="150" height="70" v-if="article.image!=''">
             <p><br></p>
             <div class="form-group">
                 <h1>
                     <label>{{article.title}}</label>
                 </h1>
-            
+
             <!-- <input v-model="article.title" class="form-control" placeholder="title" /> -->
             </div>
             <div class="form-group">
                <div v-html="article.content"></div>
             </div>
-            
+
             <div class="form-group">
                 <a :href="article.url">{{article.url}}</a>
             </div>
-            
+
             <div class="form-group">
                <label>{{article.arttypeDetail[0].title}}</label>
             </div>
@@ -34,11 +34,11 @@ import axios from "axios";
 export default {
   created() {
     this.getData();
-    
+
   },
   data() {
     return {
-      
+
       article: {
           title: "",
           content: "",
@@ -50,10 +50,10 @@ export default {
     };
   },
    methods: {
-    getData() {
+    async getData() {
       let articleid = this.$store.state.articleId;
-          axios
-            .get("/article/"+articleid)       
+         await axios
+            .get("/article/"+articleid)
             .then((response) => {
                this.article = response.data;
                console.log(this.article);

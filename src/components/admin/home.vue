@@ -3,18 +3,18 @@
  <div class="container">
  <Header name="Yeni Makale" to="/newarticle"></Header>
 
-<v-client-table 
+<v-client-table
           :data="articleList"
-          :columns="columns" 
+          :columns="columns"
           :options="options">
-          <span slot="actions" slot-scope="{row}"> 
+          <span slot="actions" slot-scope="{row}">
             <button v-on:click="edit(row.id)">Seç</button>
             <button v-on:click="erase(row.id)">Sil</button>
           </span>
       </v-client-table>
 
  </div>
- 
+
 </template>
 
 <script>
@@ -29,7 +29,7 @@
     created(){
       this.getData();
     },
-   
+
     data(){
       return{
         columns: ['id','title', 'url', 'articleType','actions'],
@@ -52,8 +52,8 @@
       // goDetail(article){
       //   this.$router.push({name:'details',params: { aname: article }})
       // }
-      getData(){
-        axios.get("/articlecustom/getall")
+     async getData(){
+       await axios.get("/articlecustom/getall")
       .then(response => {
         let data = response.data;
         this.articleList = data;
@@ -62,8 +62,8 @@
       },
       edit (Id) {
         this.$router.push({name:'details',params: { aname: Id }})
-    },   
-    erase (Id) {
+    },
+    async erase (Id) {
        this.$confirm(
         {
           message: 'Emin misin?',
@@ -74,7 +74,7 @@
           callback: confirm => {
             if (confirm) {
              if(confirm){
-               axios.delete("article/"+Id).then((result) => { this.getData(); }).catch((e) => console.log(e));
+               await axios.delete("article/"+Id).then((result) => { this.getData(); }).catch((e) => console.log(e));
              }
             }
           }
@@ -89,7 +89,7 @@
 <style scoped>
   #app {
   width: 95%;
-  margin-top: 50px; 
+  margin-top: 50px;
 }
 
 .VuePagination {
@@ -132,5 +132,5 @@ th:nth-child(3) {
   content: "-";
 }
 
-  
+
 </style>

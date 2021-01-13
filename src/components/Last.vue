@@ -51,8 +51,8 @@ export default {
     };
   },
    methods: {
-    getData() {
-      axios
+    async getData() {
+      await axios
         .get("articlecustom/LastArticle")
         .then((response) => {
           this.article = response.data;
