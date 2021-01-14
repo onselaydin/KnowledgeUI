@@ -21,7 +21,9 @@ import BootstrapVue from 'bootstrap-vue'
 
 axios.defaults.baseURL = "http://139.59.215.230/api";
 //axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.headers.common["Authorization"] = 'Bearer '+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJyb2xlIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3ZlcnNpb24iOiJWMy4xIiwibmJmIjoxNjEwNjUxMjAzLCJleHAiOjE2MTA4MjQwMDMsImlhdCI6MTYxMDY1MTIwM30.albB5VonXUkuorQmAulPN9d0vzJMey7oOfIJKyUVUTA' ;
 axios.defaults.headers.get["Accepts"] = "application/json";  //sadece json kabul
+
 
 Vue.use(ClientTable);
 Vue.config.productionTip = false
