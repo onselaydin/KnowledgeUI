@@ -37,17 +37,24 @@ Vue.use(Vuex);
         },
 
         login({commit, dispatch, state}, authData){
-
+            //console.log(authData);
             let authLink = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key="
             if(authData.isUser){
                 authLink = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="
             }
 
-            return axios.post(
-            authLink + "AIzaSyAsKQgrRBYK5yNom081iYFRhTE71MQRyRs",
-            { email : authData.email, password : authData.password, returnSecureToken : true }
-            ).then(response => {
-               
+            return fetch(authLink + "AIzaSyBXxdGfZx7GAKInm77YUwzj7TKchpb0ETw", {
+              method: "POST",
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+               email : authData.email, password : authData.password, returnSecureToken : true
+              })
+            })
+            .then( (response) => {
+              //console.log(response);
                 commit("setToken",response.data.idToken)
                 localStorage.setItem("token",response.data.idToken);
             })

@@ -3,7 +3,7 @@
         <div class="row  mt-5">
             <div class="col-md-4 offset-4 card card-primary p-3 border"
                  :class="{'border-primary' : isUser, 'border-success' : !isUser }">
-        
+
                 <hr>
                 <form @submit.prevent="onSubmit">
                     <div class="form-group">
@@ -16,7 +16,7 @@
                         <input v-model="user.password" type="password" class="form-control" placeholder="Şifreniz...">
                     </div>
                     <div class="button-container d-flex  flex-column align-items-center">
-                        <button type="submit" 
+                        <button type="submit"
                                 class="btn btn-block mb-2 btn-primary">
                             Giriş Yap
                         </button>
@@ -30,7 +30,7 @@
     </div>
 </template>
 <script>
-    
+
     export default {
         data() {
             return {
@@ -45,11 +45,13 @@
             onSubmit() {
                 this.$store.dispatch("login", {...this.user, isUser : true })
                 .then(response => {
+                  //console.log(response);
                     this.$router.push("/home")
+                },error => {
+                    //console.error(error);
+                    //alert("Kullanıcı adı yada şifre hatalı.")
                 })
-                .catch((e) => 
-                    alert("Kullanıcı adı yada şifre hatalı.")
-                );
+
             }
         }
     }
