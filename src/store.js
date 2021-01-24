@@ -36,14 +36,14 @@ Vue.use(Vuex);
             }
         },
 
-        login({commit, dispatch, state}, authData){
+        async login({commit, dispatch, state}, authData){
             //console.log(authData);
             let authLink = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key="
             if(authData.isUser){
                 authLink = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="
             }
 
-            return fetch(authLink + "AIzaSyBXxdGfZx7GAKInm77YUwzj7TKchpb0ETw", {
+            return await fetch(authLink + "AIzaSyBXxdGfZx7GAKInm77YUwzj7TKchpb0ETw", {
               method: "POST",
               headers: {
                 'Accept': 'application/json',
@@ -53,10 +53,11 @@ Vue.use(Vuex);
                email : authData.email, password : authData.password, returnSecureToken : true
               })
             })
-            .then( (response) => {
-              //console.log(response);
-                commit("setToken",response.data.idToken)
-                localStorage.setItem("token",response.data.idToken);
+            .then((response) => {
+                //console.log(response.json());
+                const data_ = response.json();
+                commit("setToken",data_.idToken)
+                localStorage.setItem("token",data_.idToken);
             })
         },
         logout({ commit, dispatch, state }){
