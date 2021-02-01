@@ -56,9 +56,9 @@ export default {
   components: {
     VueEditor,Header
   },
-  async created() {
+   created() {
 
-    await axios
+     axios
       .get("/arttype")
       .then((response) => {
         let data = response.data;
@@ -68,9 +68,9 @@ export default {
 
   },
   methods: {
-       async onSubmit() {
+        onSubmit() {
           this.article.dates = new Date().toLocaleString();
-          await axios
+           axios
             .post("/article", { ...this.article })
             .then((response) => {
               this.article = {};
