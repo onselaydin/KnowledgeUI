@@ -19,8 +19,8 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import BootstrapVue from 'bootstrap-vue'
 
 
-//axios.defaults.baseURL = "http://139.59.215.230/api";
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = "http://139.59.215.230/api";
+//axios.defaults.baseURL = "http://localhost:5000/api";
 axios.defaults.headers.common["Authorization"] = 'Bearer '+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJyb2xlIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3ZlcnNpb24iOiJWMy4xIiwibmJmIjoxNjEyMjExNzU3LCJleHAiOjE2MTIzODQ1NTcsImlhdCI6MTYxMjIxMTc1N30.eIgXtbsvn_mEINz5vbhLWebvk7cKnkQPp9mCPNk3Wcw' ;
 axios.defaults.headers.get["Accepts"] = "application/json";  //sadece json kabul
 
