@@ -75,8 +75,8 @@ export default {
       this.$store.state.articleId = Id;
       this.$router.push({ name: "articledetail" });
     },
-    async getData() {
-      await axios
+     getData() {
+       axios
         .get("articlecustom/getall")
         .then((response) => {
           let data = response.data;
@@ -84,9 +84,9 @@ export default {
         })
         .catch((e) => console.log(e));
     },
-    async findArticle(e) {
+     findArticle(e) {
       //console.log(e.target.value);
-      await axios
+       axios
         .get("articlecustom/FindArticle/", {
           params: {
             ArticleName: e.target.value,

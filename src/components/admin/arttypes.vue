@@ -55,8 +55,8 @@ export default {
     // goDetail(article) {
     //   this.$router.push({ name: "arttypedetail", params: { aname: article } });
     // },
-    async getData(){
-      await axios
+     getData(){
+       axios
       .get("/arttype")
       .then((result) => {
         let data = result.data;
@@ -67,7 +67,7 @@ export default {
     edit (Id) {
        this.$router.push({ name: "arttypedetail", params: { aname: Id } });
     },
-    async erase (Id) {
+     erase (Id) {
        console.log(Id);
 
        this.$confirm(

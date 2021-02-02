@@ -50,9 +50,9 @@ export default {
     };
   },
    methods: {
-    async getData() {
+     getData() {
       let articleid = this.$store.state.articleId;
-         await axios
+          axios
             .get("/article/"+articleid)
             .then((response) => {
                this.article = response.data;

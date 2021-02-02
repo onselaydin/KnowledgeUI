@@ -88,9 +88,9 @@ export default {
   },
 
   methods:{
-	 async onSubmit() {
+	  onSubmit() {
           this.article.dates = new Date().toLocaleString();
-          await axios
+           axios
             .put("/article", { ...this.article })
             .then((response) => {
               //this.article = {};

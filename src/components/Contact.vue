@@ -114,9 +114,9 @@ export default {
     };
   },
   methods: {
-    async onSubmit() {
+     onSubmit() {
       this.message.date = new Date().toLocaleString();
-      await axios
+       axios
         .post("/message", { ...this.message })
         .then((response) => {
           this.message = {};

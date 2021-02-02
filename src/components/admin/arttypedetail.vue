@@ -34,13 +34,13 @@ export default {
    components: {
     Header
   },
-	async created() {
-    await axios
+	 created() {
+     axios
      .get("/arttype/"+this.articlename.toString())
       .then((response) => {
         let data = response.data;
         this.articletype = data;
-        console.log(this.articletype);
+        //console.log(this.articletype);
       })
 		.catch((e) => console.log(e));
 
@@ -58,9 +58,9 @@ export default {
 	};
   },
   methods:{
-	 async onSubmit() {
+	  onSubmit() {
        this.articletype.dates = new Date().toLocaleString();
-         await axios
+          axios
             .put("/arttype", { ...this.articletype })
             .then((response) => {
               //this.article = {};

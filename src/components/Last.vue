@@ -51,12 +51,12 @@ export default {
     };
   },
    methods: {
-    async getData() {
-      await axios
+     getData() {
+       axios
         .get("articlecustom/LastArticle")
         .then((response) => {
           this.article = response.data;
-          console.log(this.article);
+          //console.log(this.article);
         })
         .catch((e) => console.log(e));
     }

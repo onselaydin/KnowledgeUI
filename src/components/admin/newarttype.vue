@@ -33,12 +33,12 @@ export default {
     Header
   },
   methods: {
-        async onSubmit() {
+         onSubmit() {
           this.arttype.dates = new Date().toLocaleString();
-         await axios
+          axios
             .post("/arttype", { ...this.arttype })
             .then((response) => {
-              console.log(response);
+              //console.log(response);
               this.arttype = {};
 
             })

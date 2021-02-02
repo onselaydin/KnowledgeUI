@@ -52,8 +52,8 @@
       // goDetail(article){
       //   this.$router.push({name:'details',params: { aname: article }})
       // }
-     async getData(){
-       await axios.get("/articlecustom/getall")
+      getData(){
+        axios.get("/articlecustom/getall")
       .then(response => {
         let data = response.data;
         this.articleList = data;
