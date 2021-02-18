@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 import home from '@/components/admin/home'
 import details from '@/components/admin/details'
-import newarticle from '@/components/admin/newarticle'  
+import newarticle from '@/components/admin/newarticle'
 import arttypes from '@/components/admin/arttypes'
 import newarttype from '@/components/admin/newarttype'
 import arttypedetail from '@/components/admin/arttypedetail'
@@ -40,15 +40,8 @@ export const router =  new VueRouter({
     {
       path: '/home',
       name: 'home',
-      component: home,
-      beforeEnter(to, from, next){
-        if(store.getters.isAuthenticated){
-            next()
-        }
-        else{
-            next("/auth")
-        }
-    }
+      component: home
+
     },
     { path : "/auth", component : Auth },
     { path : "/about", component : About },
@@ -61,69 +54,28 @@ export const router =  new VueRouter({
         next();
       },
       name: 'details',
-      component: details,
-      beforeEnter(to, from, next){
-        if(store.getters.isAuthenticated){
-            next()
-        }
-        else{
-            next("/auth")
-        }
-    }
+      component: details
     },
     {
       path: '/newarticle',
       name: 'newarticle',
-      component: newarticle,
-      beforeEnter(to, from, next){
-        if(store.getters.isAuthenticated){
-            next()
-        }
-        else{
-            next("/auth")
-        }
-    }
-    },
+      component: newarticle
     {
       path: '/arttypes',
       name: 'arttypes',
-      component: arttypes,
-      beforeEnter(to, from, next){
-        if(store.getters.isAuthenticated){
-            next()
-        }
-        else{
-            next("/auth")
-        }
-    }
+      component: arttypes
     },
     {
       path: '/newarttype',
       name: 'newarttype',
-      component: newarttype,
-      beforeEnter(to, from, next){
-        if(store.getters.isAuthenticated){
-            next()
-        }
-        else{
-            next("/auth")
-        }
-    }
+      component: newarttype
     },
     {
       path: '/arttypedetail',
       name: 'arttypedetail',
-      component: arttypedetail,
-      beforeEnter(to, from, next){
-        if(store.getters.isAuthenticated){
-            next()
-        }
-        else{
-            next("/auth")
-        }
+      component: arttypedetail
     }
-    }
-    
+
   ],
   mode:"history"
 })
