@@ -9,7 +9,7 @@ import newarttype from '@/components/admin/newarttype'
 import arttypedetail from '@/components/admin/arttypedetail'
 import Index from '@/components/Index.vue'
 import Auth from "@/auth/Auth.vue";
-import { store } from "@/store";
+//import { store } from "@/store";
 import About from '@/components/About'
 import Last from '@/components/Last'
 import Contact from '@/components/Contact'
@@ -60,6 +60,7 @@ export const router =  new VueRouter({
       path: '/newarticle',
       name: 'newarticle',
       component: newarticle
+    },
     {
       path: '/arttypes',
       name: 'arttypes',
