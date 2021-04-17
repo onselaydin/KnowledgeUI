@@ -1,3 +1,5 @@
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 import home from '@/components/admin/home'
 import details from '@/components/admin/details'
 import newarticle from '@/components/admin/newarticle'
